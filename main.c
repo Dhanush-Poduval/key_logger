@@ -30,7 +30,7 @@ int main(int argc , char *argv[]){
   printf("Value produces : %d\n",ie.code);
   while(1){
     read(fd , &ie , sizeof(ie));
-    printf("Value profuces : %d\n",ie.code);
+    printf("Value produces : %d\n",ie.code);
     
   }
   // read(fd , &ie , sizeof(ie));
