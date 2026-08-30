@@ -62,6 +62,10 @@ void event_converter(int code){
       printf(" Y\n");
   }else if (code == KEY_Z) {
       printf(" Z\n");
+  }else if(code==KEY_SPACE){
+    printf(" \n");
+  }else if(code==KEY_TAB){
+    printf("\t");
   }else {
     printf("Uknown key pressed : %d \n",code);
   }
