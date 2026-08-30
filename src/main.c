@@ -25,13 +25,21 @@ int main(int argc , char *argv[]){
   //   return -1;
   // }
   int fd=open(argv[1],O_RDONLY,0);
+  if(fd<0){
+    printf("Error in reading the file \n");
+    exit(-1);
+  }
   printf("File descriptor value : %d\n",fd);
   struct input_event ie;
 
   // printf("Error : %d\n",errno);
   printf("Value produces : %d\n",ie.code);
   while(1){
-    read(fd , &ie , sizeof(ie));
+    int a=read(fd , &ie , sizeof(ie));
+    if(a<0){
+      printf("Error in reading the file \n");
+      exit(-1);
+    }
     if(ie.type != EV_KEY){
       continue;
     }
